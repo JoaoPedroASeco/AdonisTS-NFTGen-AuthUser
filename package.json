@@ -1,0 +1,10 @@
+{
+  "name": "nftgeneratorgalery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "João Pedro Augusto Seco",
+  "gitlab": "https://gitlab.com/dev.jpedro/backend-cachorro-caramelo-nft.git",
+  "license": "ISC"
+}
