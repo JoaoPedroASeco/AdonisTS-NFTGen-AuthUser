@@ -6,7 +6,7 @@ export default class NftOrders extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id").primary()
-      table.integer('user_id').notNullable()
+      table.integer('userId').unsigned().references('users.id').onDelete('CASCADE')
       table.boolean('accepted_terms').notNullable()
       table.timestamp('accepted_terms_at', { useTz: true }).notNullable()
       table.integer('value')

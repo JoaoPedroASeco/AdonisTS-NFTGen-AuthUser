@@ -132,9 +132,9 @@ const drawBackground = () => {
 const addMetadata = async (_dna, _edition) => {
   let dateTime = Date.now();
   let tempMetadata = {
-    name: `#${_edition}`,
+    name: `${namePrefix} #${_edition}`,
     description: description,
-    image: `${baseUri}/${_edition}.png`,
+    image: `${baseUri}/${namePrefix} #${_edition}.png`,
     dna: sha1(_dna),
     edition: _edition,
     date: dateTime,
@@ -151,7 +151,7 @@ const addMetadata = async (_dna, _edition) => {
       description: tempMetadata.description,
       //Added metadata for solana
       seller_fee_basis_points: solanaMetadata.seller_fee_basis_points,
-      image: `${_edition}.png`,
+      image: `${namePrefix} #${_edition}.png`,
       //Added metadata for solana
       external_url: solanaMetadata.external_url,
       edition: _edition,

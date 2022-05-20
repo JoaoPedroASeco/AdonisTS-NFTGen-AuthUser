@@ -1,0 +1,2 @@
+Função de DELETE não exclui os o registro do cliente no BD,
+e sim oculta ele da listagem apartir do deleted_at;

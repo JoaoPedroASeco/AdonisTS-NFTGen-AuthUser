@@ -6,7 +6,7 @@ export default class Metadata extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id").primary()
-      table.integer('galleries_id').notNullable()
+      table.integer('galleries_id').unsigned().references('galleries.id').onDelete('CASCADE')
       table.string('background', 255).notNullable()
       table.string('eyeball', 255).notNullable()
       table.string('eye_color', 255).notNullable()

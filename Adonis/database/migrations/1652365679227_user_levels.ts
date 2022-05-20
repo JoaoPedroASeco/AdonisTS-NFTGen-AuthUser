@@ -6,7 +6,7 @@ export default class UserLevels extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id").primary()
-      table.integer('user_id').notNullable().unique()
+      table.integer('user_id').unsigned().references('users.id').onDelete('CASCADE')
       table.integer('points').defaultTo(0)
 
       /**
