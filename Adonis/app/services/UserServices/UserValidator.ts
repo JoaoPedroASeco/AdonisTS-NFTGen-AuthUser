@@ -7,7 +7,7 @@ export const userSchema = schema.create({
   telephone: schema.string({}, [ rules.minLength(8)]),
   wallet: schema.string({}, [ rules.minLength(40)]),
   user_type: schema.string({}),
-  country_code: schema.string({}, [ rules.minLength(4)]),
+  country_code: schema.number(),
   street: schema.string({}, [ rules.minLength(6)]),
   number: schema.string({}),
   reference: schema.string(),

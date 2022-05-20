@@ -6,7 +6,7 @@ export default class RecoverCodes extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id").primary()
-      table.integer('user_id').notNullable()
+      table.integer('userId').unsigned().references('users.id').onDelete('CASCADE')
       table.string('code').notNullable()
       table.timestamp('expiration', { useTz: true }).notNullable()
       table.integer('recover_status_type_id').notNullable()

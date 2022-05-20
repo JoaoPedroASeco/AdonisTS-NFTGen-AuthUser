@@ -22,8 +22,8 @@ import Route from '@ioc:Adonis/Core/Route'
 
 // User CRUD
 Route.post('/users-create', 'UsersController.create')
-Route.post('/users-update', 'UsersController.update')
-Route.post('/users-delete', 'UsersController.delete')
+Route.put('/users-update', 'UsersController.update')
+Route.delete('/users-delete', 'UsersController.delete')
 Route.post('/users-list', 'UsersController.list')
 
 // User Auth

@@ -7,7 +7,7 @@ export default class Nfts extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments("id").primary()
       table.integer('token_id').notNullable().unique()
-      table.integer('user_id').notNullable()
+      table.integer('userId').unsigned().references('users.id').onDelete('CASCADE')
       table.timestamp('owned_at', { useTz: true }).notNullable()
       table.integer('collection_id').notNullable()
 

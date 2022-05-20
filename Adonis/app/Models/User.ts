@@ -1,8 +1,16 @@
-import { DateTime } from 'luxon'
+import { column, beforeSave, BaseModel, hasOne, HasOne } from '@ioc:Adonis/Lucid/Orm'
 import Hash from '@ioc:Adonis/Core/Hash'
-import { column, beforeSave, BaseModel } from '@ioc:Adonis/Lucid/Orm'
+import UserLevel from './UserLevel'
+import { DateTime } from 'luxon'
+import Address from './Address'
 
 export default class User extends BaseModel {
+  @hasOne(() => Address)
+  public address: HasOne<typeof Address>
+
+  @hasOne(() => UserLevel)
+  public user_level: HasOne<typeof UserLevel>
+
   @column({ isPrimary: true })
   public id: number
 

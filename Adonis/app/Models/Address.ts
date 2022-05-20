@@ -6,19 +6,19 @@ export default class Address extends BaseModel {
   public id: number
 
   @column()
-  public user_id: number
+  public userId: number
 
   @column()
   public country_code: number
 
   @column()
-  public street: number
+  public street: string
 
   @column()
-  public number: number
+  public number: string
 
   @column()
-  public reference: number
+  public reference: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

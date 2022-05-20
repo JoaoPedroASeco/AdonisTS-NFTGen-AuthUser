@@ -28,13 +28,13 @@ let data = JSON.parse(rawdata);
 
 data.forEach((item) => {
   if (network == NETWORK.sol) {
-    item.name = `#${item.edition}`;
+    item.name = `${namePrefix} #${item.edition}`;
     item.description = description;
     item.creators = solanaMetadata.creators;
   } else {
-    item.name = `#${item.edition}`;
+    item.name = `${namePrefix} #${item.edition}`;
     item.description = description;
-    item.image = `${baseUri}/${item.edition}.png`;
+    item.image = `${baseUri}/${namePrefix} ${item.edition}.png`;
   }
   fs.writeFileSync(
     `${basePath}/build/json/${item.edition}.json`,
